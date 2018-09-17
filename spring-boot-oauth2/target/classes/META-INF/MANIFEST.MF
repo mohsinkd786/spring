@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-oauth2
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: mohsin.khurshid
+Implementation-Vendor-Id: com.mohsinkd786.java.spring
+Build-Jdk: 1.8.0_144
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-oauth2
+Created-By: Maven Integration for Eclipse
+
