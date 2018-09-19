@@ -34,4 +34,9 @@ public class StudentController {
 	public void insert(@RequestBody Student st) {
 		service.insert(st);
 	}
+
+	@GetMapping("/findBySubject/{code}")
+	public List<Student> findStudentsbySubjectCode(@PathVariable("code") String subjectCode) {
+		return service.findStudentsbySubjectCode(subjectCode);
+	}
 }

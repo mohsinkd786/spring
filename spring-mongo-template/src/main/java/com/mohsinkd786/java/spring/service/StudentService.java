@@ -25,4 +25,8 @@ public class StudentService {
 	public void insert(Student st) {
 		repo.insert(st);
 	}
+
+	public List<Student> findStudentsbySubjectCode(String subjectCode) {
+		return repo.findStudentsbySubjectCode(subjectCode);
+	}
 }
