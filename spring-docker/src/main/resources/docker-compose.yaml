@@ -5,8 +5,4 @@ services:
     image: spring-spotify-boot:latest
     ports:
       - 8080:8080
-  xyz:
-    image: spring-spotify-boot:latest
-    ports:
-      - 8080:8080
   
