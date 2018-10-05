@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<aop:config>
+		<aop:aspect id="userServiceConfigAspect"
+			ref="userServiceAspect">
+			<aop:pointcut
+				expression="execution(* com.mohsinkd786.java.spring.UserService.getMessage())"
+				id="userServiceConfigPointCut"></aop:pointcut>
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="userServiceAspect"
+		class="com.mohsinkd786.java.spring.UserServiceAspect"></bean>
+
+	<bean id="userServicePointCut"
+		class="com.mohsinkd786.java.spring.UserServicePointCut"></bean>
+
+
+	<bean id="userService"
+		class="com.mohsinkd786.java.spring.UserService"></bean>
+</beans>
