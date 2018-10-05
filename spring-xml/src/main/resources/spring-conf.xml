@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	
+	<bean id="hello"
+		class="com.mohsinkd786.spring.service.HelloService" scope="prototype">
+		<constructor-arg name="text"
+			value="Hello how r u today"></constructor-arg>
+	</bean>
+	<bean id="hello1"
+		class="com.mohsinkd786.spring.service.HelloService">
+		<constructor-arg name="text"
+			value="Priyam is always talking"></constructor-arg>
+	</bean>
+	<bean id="helloService"
+		class="com.mohsinkd786.spring.service.HelloService">
+		<constructor-arg name="text"
+			value="This is a parameterised One"></constructor-arg>
+		<constructor-arg name="index" value="12" type="int"></constructor-arg>
+	</bean>
+	<bean id="mService1"
+		class="com.mohsinkd786.spring.service.MessageService">
+		<constructor-arg name="service" ref="helloService"></constructor-arg>
+	</bean>
+
+	<bean id="mService2"
+		class="com.mohsinkd786.spring.service.MessageService">
+		<property name="service" ref="helloService"></property>
+	</bean>
+
+	<bean id="uService"
+		class="com.mohsinkd786.spring.service.UserService">
+		<property name="message" value="User Service"></property>
+	</bean>
+	<bean id="utilService"
+		class="com.mohsinkd786.spring.service.UtilService"></bean>
+</beans>
