@@ -1,0 +1,2 @@
+
+web: java -jar target/spring-ddd-bank-0.1-SNAPSHOT.jar
