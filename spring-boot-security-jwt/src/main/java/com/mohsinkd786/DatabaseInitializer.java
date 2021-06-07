@@ -14,14 +14,14 @@ import java.util.Set;
 public class DatabaseInitializer implements ApplicationListener<ApplicationReadyEvent> {
 
     private final List<String> usernames = List.of(
-            "ada.lovelace@nix.io",
-            "alan.turing@nix.io",
-            "dennis.ritchie@nix.io"
+            "mohsink@aliftech.xyz",
+            "haazim@aliftech.xyz",
+            "saurabh.singhal@aliftech.xyz"
     );
     private final List<String> fullNames = List.of(
-            "Ada Lovelace",
-            "Alan Turing",
-            "Dennis Ritchie"
+            "Mohsin Khursheed",
+            "Haazim Ahmed",
+            "Saurabh Singhal"
     );
     private final List<String> roles = List.of(
             Role.USER_ADMIN,
