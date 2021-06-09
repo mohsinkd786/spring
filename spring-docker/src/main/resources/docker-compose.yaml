@@ -1,8 +1,11 @@
 version: '3'
 
-services: 
-  spring-boot-ibm:
+services:
+  spring-spotify-boot:
     image: spring-spotify-boot:latest
     ports:
-      - 8080:8080
-  
+      - 7001:7001
+  spring-boot-docker:
+    image: spring-boot-docker:latest
+    ports:
+      - 8484:8080
