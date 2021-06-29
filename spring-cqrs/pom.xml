@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mohsinkd786</groupId>
-    <artifactId>cqrs-es</artifactId>
+    <artifactId>spring-cqrs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cqrs-es</name>
     <description>Demo project for Spring Boot</description>

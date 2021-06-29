@@ -9,6 +9,6 @@ public class HelloController {
 
 	@RequestMapping(path = "/message", method = RequestMethod.GET)
 	public String message() {
-		return "Eureka Hello Service";
+		return "Eureka Hello Service - 8111";
 	}
 }

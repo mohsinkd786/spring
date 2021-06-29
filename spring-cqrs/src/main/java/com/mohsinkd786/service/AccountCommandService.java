@@ -18,7 +18,7 @@ import static com.mohsinkd786.service.ServiceUtils.formatUuid;
 @Service
 @AllArgsConstructor
 public class AccountCommandService {
-    private final CommandGateway commandGateway;
+    private final CommandGateway  commandGateway;
 
     public CompletableFuture<BankAccount> createAccount(AccountCreationDTO creationDTO) {
         return this.commandGateway.send(new CreateAccountCommand(

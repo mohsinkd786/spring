@@ -6,7 +6,7 @@
 
 	<name>Spring DDD Bank</name>
 	<groupId>com.mohsinkd786</groupId>
-	<artifactId>spring-ddd-bank</artifactId>
+	<artifactId>spring-ddd</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,12 +25,10 @@
 		<messageTextFile>MessageText.properties</messageTextFile>
 	</properties>
 	<dependencies>
-		<!-- According to https://spring.io/guides/gs/rest-hateoas/ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
-		<!-- According to https://spring.io/guides/gs/securing-web/ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
