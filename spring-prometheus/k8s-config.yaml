@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-prometheus
+spec:
+  selector:
+    matchLabels:
+      app: spring-prometheus
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "5001"
+        prometheus.io/scrape: "true"
+      labels:
+        app: spring-prometheus
+    spec:
+      containers:
+        - name: spring-prometheus
+          image: techmomo/spring-prometheus:latest
+          ports:
+            - containerPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-prometheus
+spec:
+  selector:
+    app: spring-prometheus
+  ports:
+    - port: 5001
+      targetPort: 5001
+  type: NodePort

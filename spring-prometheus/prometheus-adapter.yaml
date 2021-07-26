@@ -1,0 +1,24 @@
+prometheus:
+  url: http://prometheus-server.default.svc
+  port: 80
+  path: ""
+
+rules:
+  default: true
+  custom:
+    - seriesQuery: '{__name__=~"^http_server_requests_seconds_.*"}'
+      resources:
+        overrides:
+          kubernetes_namespace:
+            resource: namespace
+          kubernetes_pod_name:
+            resource: pod
+      name:
+        matches: "^http_server_requests_seconds_count(.*)"
+        as: "http_server_requests_seconds_count_sum"
+      metricsQuery: sum(<<.Series>>{<<.LabelMatchers>>,uri=~"/persons.*"}) by (<<.GroupBy>>)
+
+
+
+# helm install -f prometheus-adapter.yaml prometheus-adapter prometheus-community/prometheus-adapter
+# https://github.com/kubernetes-sigs/metrics-server
