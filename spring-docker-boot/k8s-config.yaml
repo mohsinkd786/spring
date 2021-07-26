@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-kube-service
+spec:
+  selector:
+    matchLabels:
+      app: spring-kube-service
+  template:
+    metadata:
+      labels:
+        app: spring-kube-service
+    spec:
+      containers:
+        - name: spring-kube-service
+          image: techmomo/spring-docker:v1
+          resources:
+            limits: # container sizing
+              memory: "100Mi"
+              cpu: "0.5"
+          ports:
+            - containerPort: 8181
+  replicas: 2
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-kube-service
+spec:
+  selector:
+    app: spring-kube-service
+  ports:
+    - port: 8181
+      targetPort: 8181
+  type: LoadBalancer
